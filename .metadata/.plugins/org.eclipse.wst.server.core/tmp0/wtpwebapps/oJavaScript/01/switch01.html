@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var a = parseInt(prompt("1~7 사이 숫자를 입력하세요"," "));
+	// if else if else를 이용해서
+	// a<1 || a>7 -> 잘못 입력하셨습니다.
+	// a가 문자로 입력  -> 숫자가 아닙니다.
+	// 정상입력 -> switch문 case1: font color-> red			msg-> 1 입력하셨습니다.
+	//					 case2: font color-> orange		msg-> 2 입력하셨습니다.
+	//					 case3: font color-> yellow		msg-> 3 입력하셨습니다.
+	//					 case4: font color-> green		msg-> 4 입력하셨습니다.
+	//					 case5: font color-> blue		msg-> 5 입력하셨습니다.
+	//					 case6: font color-> navy		msg-> 6 입력하셨습니다.
+	//					 default: font color-> violet	msg-> 7 입력하셨습니다.
+	if (a<1 || a>7) 	document.write("잘못 입력하셨습니다.");
+	else if (isNaN(a))  document.write("숫자가 아닙니다.");
+	else {
+		switch (a) {
+			case 1:
+				document.write("1 입력하셨습니다.".fontcolor("red"));
+				break;
+			case 2:
+				document.write("2 입력하셨습니다.".fontcolor("orange"));
+				break;
+			case 3:
+				document.write("3 입력하셨습니다.".fontcolor("yellow"));
+				break;
+			case 4:
+				document.write("4 입력하셨습니다.".fontcolor("green"));
+				break;
+			case 5:
+				document.write("5 입력하셨습니다.".fontcolor("blue"));
+				break;
+			case 6:
+				document.write("6 입력하셨습니다.".fontcolor("navy"));
+				break;
+			default:
+				document.write("7 입력하셨습니다.".fontcolor("violet"));
+				break;
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<h1>Switch01</h1>
+</body>
+</html>

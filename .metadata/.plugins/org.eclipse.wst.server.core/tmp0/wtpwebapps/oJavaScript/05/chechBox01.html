@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var str = "좋아하는 영화는?\n";
+		if(frm.ch1.checked) str += frm.ch1.value+"\n";
+		if(frm.ch2.checked) str += frm.ch2.value+"\n";
+		if(frm.ch3.checked) str += frm.ch3.value+"\n";
+		alert(str);
+	}
+</script>
+</head>
+<body>
+	<h2>좋아하는 영화를 선택하셈</h2>
+	<form action="" name="frm">
+		리미트 <input type="checkbox" name="ch1" id="m1" value="리미트">
+		<label for="m2">한산</label>
+		<input type="checkbox" name="ch2" id="m2" value="한산">
+		<label for="m2">Hunt</label>
+		<input type="checkbox" name="ch3" id="m3" value="Hunt"><p>
+		<input type="button" value="확인" onclick="chk()">
+	</form>
+</body>
+</html>

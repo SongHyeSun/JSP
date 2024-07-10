@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk(num) {
+		document.images[0].src = "../images/"+num+".gif";
+	}
+</script>
+</head>
+<body>
+	<h1>dom Image 바꾸기</h1>
+	<center>
+		<img alt="3" src="../images/3.gif"><p>
+		<img alt="4" src="../images/4.gif"><p>
+		
+		<button onclick="chk(1)">목마</button>
+		<button onclick="chk(2)">우체통</button>
+		<button onclick="chk(3)">불자동차</button>
+	</center>
+</body>
+</html>

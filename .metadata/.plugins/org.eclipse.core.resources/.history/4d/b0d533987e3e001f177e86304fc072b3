@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>이름과 주소를 입력해</h1>
+	<form action="name.jsp" name="frm" onsubmit="return chk()" method="post">
+		이름 : <input type="text" name="name"><p>
+		주소 : <input type="text" name="addr"><p>
+		<input type="submit" value="확인e">
+	</form>
+</body>
+</html>

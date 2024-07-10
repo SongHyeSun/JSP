@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.highlight {
+		background-color: yellow;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+    /* DOM(body밑에 HTML이 브라우져에 다 완성이 되면)이 준비되면 그 다음에 실행 */
+	$(function() {
+		$('h1').addClass('highlight');
+	});
+</script>
+</head>
+<body>
+	<h1>대박</h1>
+	<h1>쪽박</h1>
+	<h2>주식</h2>
+	<h1>헐..</h1>
+	<h2>왜! 반토막이야</h2>
+	<h1>비트코인</h1>
+</body>
+</html>

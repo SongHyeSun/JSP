@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if (!frm.id.value) {
+			alert("이름?");
+			frm.id.focus();
+			return false;
+		}
+		if (!frm.pass.value) {
+			alert("암호?");
+			frm.pass.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>로그인 Get / Post *****</h2>
+<!-- 	<form action="http://www.daum.net" name="frm" onsubmit="return chk()"> -->
+		<form action="http://www.naver.com" name="frm" method="post" onsubmit="return chk()">
+		<table border="1" bgcolor="yellow">
+			<tr><td>아이디</td><td><input type="text" name="id"></td></tr>
+			<tr><td>암호</td><td><input type="password" name="pass"></td></tr>
+			<tr>
+				<td><input type="submit" value="확인"></td>
+				<td><input type="reset" value="취소"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>좋아하는 색은?</h1>
+	<form action="color.jsp">
+	빨강<input> 
+	</form>
+</body>
+</html>

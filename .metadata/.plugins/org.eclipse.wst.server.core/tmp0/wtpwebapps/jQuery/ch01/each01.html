@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var eh = $('div.simpletext1,span,p');
+		var cnt = "갯수 : "+eh.length+"\n";
+		var result = "Select Tag 내용 : ";
+		eh.each(function() {
+			result += $(this).text()+ " ";
+		});
+		
+		alert(cnt+result);
+	});
+</script>
+</head>
+<body>
+	<span>simple</span> 
+	<div class='simpletext1'>jQuery</div> 
+	<div>basic</div> 
+	<p>example</p>
+</body>
+</html>

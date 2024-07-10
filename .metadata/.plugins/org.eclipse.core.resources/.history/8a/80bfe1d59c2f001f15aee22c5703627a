@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.spotlight { background-color: #ff0;}
+	.redtext   { color: #f00;}
+	.largetext { font-size: 30pt;}
+	.italictext{ font-style: italic;}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<h1>아..아니..예요</h1>
+	<span id="simpletext1">simple</span>
+	<div class="simpletext1">jQuery</div>
+	<span id="simpletext2">basic</span>
+	<div id="simpletext3">example</div>
+</body>
+</html>

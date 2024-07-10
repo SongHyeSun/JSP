@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+	<h1>아..아니..예요</h1>
+	<span id="simpletext1">simple</span>
+	<div class="simpletext1">jQuery</div>
+	<span id="simpletext2">basic</span>
+	<div id="simpletext3">example</div>
+</body>
+</html>

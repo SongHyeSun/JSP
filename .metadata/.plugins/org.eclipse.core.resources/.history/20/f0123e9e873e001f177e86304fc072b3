@@ -1,0 +1,26 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	//three(int x) -> X*X*X
+	int three (int x) {
+		int result = 1;
+		for (int i=2 ; i<=6; i++) {
+			result = i*i*i;
+		}
+		return result;
+	}
+%>
+	2^3 = <%=three(3) %><p>
+	3^3 = <%=three(3) %><p>
+	4^3 = <%=three(3) %><p>
+	5^3 = <%=three(3) %><p>
+	6^3 = <%=three(3) %><p>
+</body>
+</html>
