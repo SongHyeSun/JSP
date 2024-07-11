@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	//1. 아래해결
+	//2. "/WEB-INF/file/"+id+".txt"
+	//   아이디 : "+id+"\r\n암호 : "+password+"\r\n이름 : "+name;
+	
+	request.setCharacterEncoding("utf-8");
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	String [] hobby = request.getParameterValues("hobby");
+	String gender = request.getParameter("gender");
+	
+	
+%>
+	<h2>회원정보</h2>
+	아이디 : <%=id %><p>
+	암호 : <%=password %><p>
+	이름 : <%=name %><p>
+	취미 : <%=hobby %><p>
+	설명 : <%=gender %><p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+		var varName 	= "varName1...";
+		let letName 	= "letName1...";
+		const constName = "constName1";
+		kkName 			= "kkk...;";
+		
+		//var와 let은 문자열을 숫자로 재할당해도 가능
+		varName = 100;
+		document.write(varName+"<br>");
+		
+		letName = 300;
+		document.write(letName+"<br>");
+		
+		//변수 재선언, 변수 재 할당 모두 불가능
+// 		constName = 500;
+//		document.write(constName+"<br>");
+		
+		//var는 재 선언 가능, let은 재 선언 불가능
+		var varName = "varName2...";
+		document.write(varName+"<br>");
+//		let letName = "letName2...";
+		
+</script>
+</head>
+<body>
+	<h1>Var let 01</h1>
+</body>
+</html>

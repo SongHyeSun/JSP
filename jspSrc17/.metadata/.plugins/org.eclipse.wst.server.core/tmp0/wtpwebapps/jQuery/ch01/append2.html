@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	em {
+		font-size: 20px;
+		line-height: 20px;
+		margin: 20px;
+		color: blue;
+	}
+</style>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(
+			function() {
+				$('p em').css('background','yellow').each(function() {
+							$('.result1').append($(this).text());
+				});
+				$('div > em').css('background-color','pink').each(function() {
+							$('.result2').append($(this).text());
+				});
+				console.log("검색된 엘리먼트 개수 : "+$('p em').length);
+				console.log("검색된 엘리먼트 개수 : "+$('div > em').length);
+			}
+	);
+</script>
+</head>
+<body>
+	<p>
+		<em> one </em> <em> two </em> <span><em> three </em></span>
+	</p>
+	<div>
+		<em> four </em> <span> <em> five </em> </span> <em> six </em>
+	</div>
+	<hr>
+	<div>
+		<span> ancestor descendant로 검색된 엘리먼트 : </span>
+		<span class="result1"></span>
+	</div>
+	<div>
+		<span> parent  &gt; child로 검색된 엘리먼트 : </span>
+		<span class="result2"></span>
+	</div>
+</body>
+</html>

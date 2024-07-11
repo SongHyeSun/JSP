@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//****Json key  : value
+	var wo = {"name":"이승은", "addr":"항공"};
+	// Json -> key:value로 객체로 배열값을 가지는 것
+	var woArr =  [
+        {"name":"김혁"  , "addr":"생물"},
+        {"name":"손정민" , "addr":"통신"},
+        {"name":"송혜선" , "addr":"화학"},
+
+      ];
+	alert("wo->"+wo)
+	alert("JSON.stringfy(wo)->"+JSON.stringify(wo));
+	
+	// parse 메소드는 string 객체를 json 객체로 변환
+	alert("JSON.parse(JSON.stringfy(wo)).name->"+JSON.parse(JSON.stringify(wo)).name);
+	alert("wo.name-> "+wo.name);
+	alert("wo.addr-> "+wo.addr);
+</script>
+</head>
+<body>
+	<h1>dom Json</h1>
+</body>
+</html>

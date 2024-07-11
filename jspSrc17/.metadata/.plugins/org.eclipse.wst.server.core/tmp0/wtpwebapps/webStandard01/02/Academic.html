@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+table, th, td {
+	border: 1px solid blue;
+			/* dotted  dashed */
+			/* 중복되는 테두리를 한 줄로 표시 */
+	border-collapse : collapse;
+}
+th, td {
+	padding: 15px;
+}
+
+thead, tfoot {
+	background: #DAD9FF;
+}
+</style>
+</head>
+<body>
+	<h2>Academic</h2>
+	<table>
+		<caption>학력사항</caption>
+		<colgroup>
+			<col style="width: 150px;">
+			<col style="width: 150px;">
+			<col style="width: 150px;">
+			<col style="width: 100px;">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>출신학교</th>
+				<th>전공</th>
+				<th>기간</th>
+				<th>졸업구분</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>ㅇㅇㅇ고등학교</td>
+				<td>(해당사항 없음)</td>
+				<td>2001.3 ~ 2004.2</td>
+				<td>졸업</td>
+			</tr>
+			<tr>
+				<td>ㅁㅁ대학교</td>
+				<td>컴퓨터공학</td>
+				<td>2004.3 ~ 2008.2</td>
+				<td>졸업</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td>학교총계</td>
+				<td>전공총계</td>
+				<td>기간총계</td>
+				<td>졸업총계</td>
+			</tr>
+		</tfoot>
+	</table>
+
+</body>
+</html>
