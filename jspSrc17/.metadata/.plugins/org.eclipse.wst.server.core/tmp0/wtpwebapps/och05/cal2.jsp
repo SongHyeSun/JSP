@@ -20,7 +20,7 @@
 		out.println("나눗셈 : "+num1+" / "+num2+" = "+(num1/num2) +"<p>");
 		//3. Exception -> error.jsp
 	} catch (Exception e) {
-		RequestDispatcher rd = request.getRequestDispatcher("error.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("error2.jsp");
 		rd.forward(request, response);
 	}
 %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var name = document.getElementById("nameId");
+		if (!nameId.value) {
+			alert("이름이 뭐냐? 쳇");
+			nameId.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>좋아하는 애완동물은?</h2>
+	<form action="pet.jsp" onsubmit="return chk()">
+		이름 : <input type="text" name="name" id="nameId"><p>
+		애완동물 : <br>
+		<input type="checkbox" name="pet" value="야옹이">야옹이<br>
+		<input type="checkbox" name="pet" value="진돗개">진돗개<br>
+		<input type="checkbox" name="pet" value="치와와">치와와<br>
+		<input type="checkbox" name="pet" value="도매뱀">도매뱀<br>
+		<input type="checkbox" name="pet" value="앵무새">앵무새<p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

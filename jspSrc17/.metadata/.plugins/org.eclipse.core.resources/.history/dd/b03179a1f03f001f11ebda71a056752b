@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%!
+	//Method, Member변수 (!:선언) --> init()
+%>
+<%
+	//doGet/doPost
+%>
+<%!
+	//Method, Member변수 (!:선언) --> destroy()
+%>
+</body>
+</html>

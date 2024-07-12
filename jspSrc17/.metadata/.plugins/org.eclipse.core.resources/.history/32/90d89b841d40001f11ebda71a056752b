@@ -1,0 +1,8 @@
+package och08;
+
+public class Product {
+	private String code;
+	private String name;
+	private int    price;
+	
+}

@@ -1,0 +1,5 @@
+package och08;
+
+public class Book extends Product {
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;och07/src/main/webapp/mapcreate.jsp&apos; to &apos;mapCreate.jsp&apos;" description="Rename resource &apos;mapcreate.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/mapcreate.jsp" name="mapCreate.jsp" stamp="1720764142584" updateReferences="true"/>
+</session>
