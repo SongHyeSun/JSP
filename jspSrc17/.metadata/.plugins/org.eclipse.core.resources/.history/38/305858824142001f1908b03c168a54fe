@@ -1,0 +1,6 @@
+package och08;
+
+public class Clothing {
+	private String color;
+	private int size;
+}

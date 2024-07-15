@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 	현장 work01
+	Bean -> pt, class --> Clothing
+	모든 Property 저장
+	이동 --> ProductInfo.jsp (재활용) -->
+	<jsp:useBean id="pt" class="och08.Clothing" scope="request"></jsp:useBean>
+</body>
+</html>

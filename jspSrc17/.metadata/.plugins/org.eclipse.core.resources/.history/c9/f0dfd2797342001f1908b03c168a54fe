@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(!frm.name.value) {
+			alert("이름?");
+			frm.name.focus();
+			return false;
+		}
+		if(!frm.gender.value) {
+			alert("성별?");
+			frm.gender.focus();
+			return false;
+		}
+		if(!frm.age.value) {
+			alert("나이?");
+			frm.age.focus();
+			return false;
+		}
+		if (isNaN(frm.age.value)) {
+			alert("나이는 숫자로 입력하세요");
+			frm.age.focus();
+			frm.age.value="";
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>인적사항 입력</h2>
+<!--<form action="person1.jsp" name="frm" onsubmit="return chk()"> -->
+<!--<form action="person2.jsp" name="frm" onsubmit="return chk()"> -->
+	<form action="person3.jsp" name="frm" onsubmit="return chk()">
+		이름 : <input type="text" name="name"><p>
+		성별 : <input type="text" name="gender"><p>
+		나이 : <input type="text" name="age"><p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

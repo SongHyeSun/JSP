@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		if(!frm.name.value) {
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<h2>좋아하는 음악은?</h2>
+	<form action="song2.jsp" name="frm" onsubmit="return chk()">
+		이름 : <input type="text" name="name"><p>
+		음악 : <br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="해야">해야<br>
+		<input type="checkbox" name="song" value="Smallgirl">Smallgirl<br>
+		<input type="checkbox" name="song" value="그랬나봐">그랬나봐<br>
+		<input type="checkbox" name="song" value="좋아해...">좋아해...<br>
+		<input type="checkbox" name="song" value="Bench">Bench<br>
+		<input type="checkbox" name="song" value="잠깐시간될까">잠깐시간될까<br>
+		<input type="checkbox" name="song" value="고민중독">고민중독<br>
+		<input type="checkbox" name="song" value="셜록">셜록<br>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

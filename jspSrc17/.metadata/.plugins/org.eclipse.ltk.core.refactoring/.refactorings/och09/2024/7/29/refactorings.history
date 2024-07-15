@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;num.html&apos; to &apos;jstl&apos;" description="Move &apos;num.html&apos; to &apos;jstl&apos;" destination="src/main/webapp/jstl" element1="src/main/webapp/num.html" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1721027502721" updateReferences="true"/>
+</session>

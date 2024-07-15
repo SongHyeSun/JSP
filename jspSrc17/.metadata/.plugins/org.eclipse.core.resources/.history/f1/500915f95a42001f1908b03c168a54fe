@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>좋아하는 음악은?</h2>
+	<form action="song2.jsp" name="frm" onsubmit="return chk()">
+		이름 : <input type="text" name="name"><p>
+		음악 : <br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="해야">해야<br>
+		<input type="checkbox" name="song" value="Smallgirl">Smallgirl<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="checkbox" name="song" value="Hero">Hero<br>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

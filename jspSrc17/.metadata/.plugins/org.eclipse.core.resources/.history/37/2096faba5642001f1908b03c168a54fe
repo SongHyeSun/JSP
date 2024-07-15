@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		var idName = document.getElementById("idName");
+		var idAddr = document.getElementById("idAddr");
+		if (!idName.value) {
+			alert("이름을 입력하세요");
+			idName.focus();
+			return false;
+		}
+		if (!idAddr.value) {
+			alert("주소를 입력하세요");
+			idAddr.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>이름과 주소를 입력하세요</h2>
+	<form action="forward.jsp" onsubmit="return chk()">
+		이름 : <input type="text" name="name" id="idName"><p>
+		주소 : <input type="text" name="addr" id="idAddr"><p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>

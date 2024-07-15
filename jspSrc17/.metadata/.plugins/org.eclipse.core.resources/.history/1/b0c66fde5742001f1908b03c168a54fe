@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>좋아하는 영화는?</h2>
+	<form action="movie1.jsp">
+		이름 : <input type="text" name="name"><p>
+		음악 : <select name="movie" multiple="multiple">
+			<option value="배트맨">배트맨</option>
+			<option value="파묘">파묘</option>
+			<option value="범죄도시4">범죄도시4</option>
+			<option value="아이언맨">아이언맨</option>
+			<option value="스파이더맨">스파이더맨</option>
+			<option value="인사이드아웃2">인사이드아웃2</option>
+			<option value="댓글부대">댓글부대2</option>
+		</select><p>
+	</form>
+</body>
+</html>
