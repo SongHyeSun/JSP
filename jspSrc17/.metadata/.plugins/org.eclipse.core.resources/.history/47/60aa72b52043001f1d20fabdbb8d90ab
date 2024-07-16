@@ -1,0 +1,4 @@
+<%@ tag language="java" pageEncoding="UTF-8"%>
+<%@ tag body-content="empty" %>
+<%@ attribute name="color" required="true" %>
+<%@ attribute name="size" required="true"%>

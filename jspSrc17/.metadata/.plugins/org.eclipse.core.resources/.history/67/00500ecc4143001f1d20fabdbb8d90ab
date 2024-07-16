@@ -1,0 +1,10 @@
+package och10;
+
+import java.sql.Date;
+
+public class Emp {
+	private int empno;
+	private String job;
+	private	Date hiredate;
+	private int comm;
+}

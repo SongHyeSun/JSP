@@ -11,6 +11,7 @@
 	String [] color = {"red","orange","yellow","green","blue","navy","violet"};
 	request.setAttribute("color", color);
 %>
-	<jsp:forward page="colorResult.jsp"></jsp:forward>
+<%-- 	<jsp:forward page="colorResult.jsp"></jsp:forward> --%>
+	<jsp:forward page="colorResult2.jsp"></jsp:forward>
 </body>
 </html>
