@@ -1,0 +1,14 @@
+package och10;
+
+import java.sql.Date;
+
+public class Professor {
+	private int profno;
+	private String name;
+	private String userid;
+	private String position;
+	private int sal;
+	private Date hiredate;
+	private int comm;
+	private int deptno;
+}

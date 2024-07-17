@@ -63,7 +63,8 @@
 		stmt.close();
 		conn.close();
 		
-		RequestDispatcher rd = request.getRequestDispatcher("ora05Result.jsp");
+	 /* RequestDispatcher rd = request.getRequestDispatcher("ora05Result.jsp"); */
+		RequestDispatcher rd = request.getRequestDispatcher("ora05Result2.jsp");
 		rd.forward(request, response);
 	} else {
 		out.println("데이터가 없습니당");

@@ -1,0 +1,47 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+1. deptno 를 가지고 dept 조회
+2. deptno ,dname , loc : request.setAttribute
+3. oraDeptIn.jsp Page이동
+    EL : deptno ,dname , loc 
+ -->
+ 
+ <%
+	int deptno = Integer.parseInt(request.getParameter("deptno"));
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@127.0.0.1:1521:xe";
+	String sql = "select * from dept where deptno="+deptno;
+	Class.forName(driver);
+	Connection conn = DriverManager.getConnection(url, "scott", "tiger");
+	Statement stmt = conn.createStatement();
+	ResultSet rs = stmt.executeQuery(sql);
+	System.out.println("sql->"+sql);
+	String dname = rs.getString("dname");
+	String loc = rs.getString("loc");
+	
+	request.setAttribute("deptno", deptno);
+	request.setAttribute("dname", dname);
+	request.setAttribute("loc", loc);
+	RequestDispatcher rd = request.getRequestDispatcher("oraDeptIn.jsp");
+	rd.forward(request, response);
+ 
+ %>
+ 	<h2>부서 정보 수정</h2>
+ 	부서코드 : ${deptno }<p>
+ 	부서명 : <input type="text" name="dname" required="required"><p>
+ 	근무지 : <input type="text" name="loc" required="required"><p>
+ 	<input type="submit" value="수정완료">
+</body>
+</html>
