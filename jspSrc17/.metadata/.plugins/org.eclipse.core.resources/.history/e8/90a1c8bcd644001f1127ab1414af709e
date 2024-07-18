@@ -1,0 +1,14 @@
+package och11;
+
+import java.sql.Connection;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+
+public class MemberDao {
+	private Connection getConnection() {
+		Connection conn = null;
+		
+		Context ctx = new InitialContext();
+	}
+}

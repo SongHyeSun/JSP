@@ -1,0 +1,12 @@
+package och11;
+
+import java.sql.Date;
+
+public class MemberDto {
+	private String id;
+	private String password;
+	private String name;
+	private Date reg_date;
+	
+	
+}
