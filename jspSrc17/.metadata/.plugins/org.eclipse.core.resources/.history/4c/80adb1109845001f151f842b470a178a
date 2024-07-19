@@ -1,0 +1,23 @@
+package och14;
+
+import java.io.IOException;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+
+public class SimpleFilter3 implements Filter {
+
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain arg2)
+			throws IOException, ServletException {
+		System.out.println("Filter3 시작...");
+		//또 다른 Filter 수행
+		chain.doFilter(request, response);
+		System.out.println("Filter3 종료...");
+
+	}
+
+}

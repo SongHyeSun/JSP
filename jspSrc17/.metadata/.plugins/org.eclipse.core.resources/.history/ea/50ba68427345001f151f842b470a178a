@@ -1,0 +1,26 @@
+<%@page import="och11.MemberDao"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="../error.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+	//id , password get으로
+	//memberdao를 md로 instance 만들어준다.
+	
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
+	MemberDao md = new MemberDao();
+	int result = md.check(id,password);
+	if (result==1) {
+		session.setAttribute("id", id);
+		response.sendRedirect("sessionMain.jsp");
+	} else if (result == 0) 
+
+%>
+</body>
+</html>
