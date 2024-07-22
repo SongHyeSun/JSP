@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#sub').click(function() {
+			//첫 번째 방법
+			/* //					val은 value이다.
+			var name = $('#name').val();
+			var pass = $('#pass').val();
+			var sendData = 'name=' + name + '&pass=' + pass; */
+			
+			var sendData = $('form').serialize();
+			
+			alert('sendData->'+sendData);
+			
+			//1. 따로 만들어놓고
+			$.ajaxSetup({
+				type : 'GET',
+				url : 'checkIn.jsp',
+				dataType : 'text',
+				//data1은 chechin에서 넘어온 값이다. 변수 명은 다르게 해도 되는데, 2개가 같으면 된다!
+				success : function(data1) {
+							$('#msg').html(data1);
+				}
+			});
+			
+			//2. data가 만들어진 후에 실행시키게 할 수 있다. (Setup과 합칠 수 있다.)
+			$.ajax({
+				data : sendData
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="">
+		이름 : <input type="text" name="name" id="name"><p>
+		암호 : <input type="password" name="pass" id="pass"><p>
+		<input type="button" id="sub" value="확인">
+	</form>
+	<div id="msg"></div>
+</body>
+</html>

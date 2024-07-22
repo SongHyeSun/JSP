@@ -1,0 +1,24 @@
+package och12;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+//SingleTon + DBCP
+public class MemberDao {
+	private static MemberDao instance;
+	private MemberDao() {
+	}
+	
+	//singleton
+	public static MemberDao getInstance() {
+		if (instance == null) {
+			instance = new MemberDao();
+		}
+		return instance;
+	}
+	
+	//DBCP
+	private Connection getConnection() throws SQLException {
+		
+	}
+}

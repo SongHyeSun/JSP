@@ -1,0 +1,25 @@
+package och15_ajax;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class MemberDao {
+	//Singleton --> Resource 절감
+	private static MemberDao instance;
+	//Default
+	private MemberDao() {
+		
+	}
+	
+	public static MemberDao getInstance() {
+		if (instance == null) {
+			instance = new MemberDao();
+		}
+		return instance;
+	}
+	
+	//DBCP
+	private Connection getConnection() throws SQLException {
+		
+	}
+}

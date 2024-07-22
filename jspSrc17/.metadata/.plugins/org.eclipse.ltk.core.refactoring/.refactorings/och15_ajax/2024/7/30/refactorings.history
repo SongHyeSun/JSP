@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;och15_ajax/src/main/webapp/ch02/max.html&apos; to &apos;max3.html&apos;" description="Rename resource &apos;max.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/ch02/max.html" name="max3.html" stamp="1721611421227" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;och15_ajax/src/main/webapp/ch02/max3.html&apos; to &apos;max.html&apos;" description="Rename resource &apos;max3.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/ch02/max3.html" name="max.html" stamp="1721611729661" updateReferences="true"/>
+</session>

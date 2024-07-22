@@ -1,0 +1,37 @@
+package och15_ajax;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class MemberDao {
+	//Singleton --> Resource 절감
+	private static MemberDao instance;
+	//Default
+	private MemberDao() {
+		
+	}
+	
+	public static MemberDao getInstance() {
+		if (instance == null) {
+			instance = new MemberDao();
+		}
+		return instance;
+	}
+	
+	//DBCP
+	private Connection getConnection() throws SQLException {
+		Connection conn = null;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource ds = ctx.lookup("java:comp/env/jdbc/OracleDB");
+			conn = ds.getConnection();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

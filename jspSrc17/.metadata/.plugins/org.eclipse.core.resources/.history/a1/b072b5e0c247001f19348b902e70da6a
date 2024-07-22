@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/httpRequest.js"></script>
+<script type="text/javascript">
+	function </script>
+</head>
+<body>
+	<input type="button" value="온도보기" onclick="chk()"><p>
+	온도 <div id="temt"></div><p>
+	최고온도 <div id="max"></div>
+</body>
+</html>

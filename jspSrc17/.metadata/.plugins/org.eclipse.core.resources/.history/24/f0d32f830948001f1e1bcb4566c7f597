@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#menu1').click(function() {
+			$.ajax({
+				url 	 : 'menu.jsp',
+				dataType : 'html',
+				success  : function(data) {
+					$('#msg1').html(data)
+				}
+			})
+		})
+	
+		$('#menu2').click(function() {
+			$.ajax({
+				url : 'menu.jsp',
+				dataType : 'html',
+				success : function(data) {
+							$('#msg2').html($(data).find('li'));
+				}
+			})
+		})
+		
+	})
+		
+</script>
+<body>
+	<div><a id="menu1">메뉴선택1</a><p>
+		<span id="msg1"></span>
+	</div><p><p><p><p><p><p>
+	<div><a id="menu2">메뉴선택2</a><p>
+		<span id="msg2"></span>
+	</div>
+</body>
+</html>

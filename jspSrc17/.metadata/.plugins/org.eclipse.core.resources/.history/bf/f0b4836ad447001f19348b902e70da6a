@@ -1,0 +1,10 @@
+package och15_ajax;
+
+public class MemberDao {
+	//Singleton --> Resource 절감
+	private static MemberDao instance;
+	//Default
+	private MemberDao() {
+		
+	}
+}

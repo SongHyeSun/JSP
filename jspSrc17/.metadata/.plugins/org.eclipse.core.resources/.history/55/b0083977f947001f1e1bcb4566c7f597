@@ -1,0 +1,10 @@
+package och12;
+
+public class Member {
+	private String id;
+	private String passwd;
+	private String name;
+	private String address;
+	private String tel;
+	private Date   reg_date;
+}

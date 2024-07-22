@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#sub').click(function() {
+			//					val은 value이다.
+			var name = $('#name').val();
+			var pass = $('#pass').val();
+			var sendData = 'name=' + name + '&pass=' + pass;
+			
+			alert('sendData->'+sendData);
+			
+			$.ajaxSetup({
+				type : 'GET',
+				url : 'checkin.jsp',
+				dataType : 'text',
+				success : function(data1) {
+							$('#msg').html(data1);
+				}
+			});
+			
+			$.ajax({
+				data : sendData
+			});
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<form action="">
+		이름 : <input type="text" name="name" id="name"><p>
+		암호 : <input type="password" name="pass" id="pass"><p>
+		<input type="button" id="sub" value="확인">
+	</form>
+	<div id="msg"></div>
+</body>
+</html>

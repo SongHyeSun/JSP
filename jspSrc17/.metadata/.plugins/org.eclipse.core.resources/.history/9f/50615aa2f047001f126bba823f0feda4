@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>취미</h2>
+	<form action="test1.jsp" name="frm1" onsubmit="return chk(0)">
+		이름1 : <input type="text" name="name"><p>
+		취미  : <select name="hobby">
+				<option value="달리기">달리기</option>
+				<option value="독서">독서</option>
+				<option value="수영">수영</option>
+			  </select><p>
+		<input type="submit" value="확인">
+	</form>
+	<h2>색상</h2>
+	<form action="test2.jsp" onsubmit="return chk(1)">
+		이름2 : <input type="text" name="name"><p>
+		색상  : <select name="color">
+				<option value="빨강">빨강</option>
+				<option value="노랑">노랑</option>
+				<option value="초록">초록</option>
+			  </select><p>
+		<input type="submit" value="확인">
+	</form>
+</body>
+</html>
