@@ -13,6 +13,7 @@
 	// 가정(DB)
 	if (id.equals("kk") && pass.equals("1234")) {
 		session.setAttribute("id", id);
+		System.out.println("check session.setAttribute");
 	} else {
 		session.invalidate();
 	}

@@ -11,6 +11,7 @@
 	String name = request.getParameter("name");
 %>
 <body>
+				<!-- 얘가 서브 프로그램 -->
 		와우! 방가 방가 <%=name %>님
 </body>
 </html>

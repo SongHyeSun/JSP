@@ -15,8 +15,10 @@
 		if (httpRequest.readyState==4)
 			if (httpRequest.status==200) {
 				var text1 = httpRequest.responseText;
+				/* 이렇게 하면 모든 html이 다 나오기 때문에! */
 				alert("responseText->"+text1);
 				
+				/* 서브스트링으로 정의해놓은 것 -> tag의 index로!*/
 				start = text1.indexOf("<body>");
 				end = text1.indexOf("</body>");
 				var text2 = text1.substring(start+6,end);

@@ -20,7 +20,7 @@
 		session.setAttribute("id", id);
 		System.out.println("Login Success... ");
 		
-//		response.sendRedirect("main.jsp");
+		response.sendRedirect("main.jsp");
 	// Password X
 	} else if (result == 0) {
 %>

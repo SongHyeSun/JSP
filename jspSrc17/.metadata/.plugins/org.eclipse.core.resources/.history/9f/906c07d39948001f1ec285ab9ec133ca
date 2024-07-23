@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" errorPage="error.jsp"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- Bean 설정
+Bean에 모든 parameter 세팅 -->
+	<jsp:useBean id="jp"></jsp:useBean>
+	<jsp:setProperty property="*" name="jp"/>
+</body>
+</html>

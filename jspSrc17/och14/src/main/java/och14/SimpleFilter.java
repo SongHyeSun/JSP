@@ -10,7 +10,7 @@ import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
 
-/*@WebFilter("/*")*/
+@WebFilter("/*")
 public class SimpleFilter implements Filter {
 	
 	@Override

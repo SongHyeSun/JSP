@@ -32,5 +32,6 @@
 			</tr>
 		</table>
 	</form><p>
+		<a href="joinForm.jsp">회원가입</a>
 </body>
 </html>

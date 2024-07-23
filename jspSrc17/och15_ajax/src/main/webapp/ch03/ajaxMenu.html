@@ -11,6 +11,7 @@
 			$.ajax({
 				url 	 : 'menu.jsp',
 				dataType : 'html',
+				//콜백함수
 				success  : function(data) {
 					$('#msg1').html(data)
 				}
