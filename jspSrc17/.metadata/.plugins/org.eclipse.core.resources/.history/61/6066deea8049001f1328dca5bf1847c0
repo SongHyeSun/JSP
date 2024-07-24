@@ -1,0 +1,5 @@
+package och16.service;
+
+public class ListAction implements CommandProcess {
+
+}

@@ -49,7 +49,9 @@
 			</tr>
 			<tr>
 				<td>날짜</td>
-				<td><%=member.getReg_date() %></td>
+				<td><%=member.getReg_date() %>
+					<%-- 안되는 이유 : parameter 값으로 넘기지 않았어서
+					EL 표기법(X)         : ${member.reg_date }</td> --%>
 			</tr>
 			<tr>
 				<td><input type="submit" value="확인"></td>

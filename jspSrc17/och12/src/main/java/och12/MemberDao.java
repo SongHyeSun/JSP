@@ -124,6 +124,7 @@ public class MemberDao {
 	}
 	
 	public List<Member> list() throws SQLException {
+		//return형이 List로 선언되어 있다면 반드시 아래 처럼 List를 선언해주어야 한다.
 		List<Member> list = new ArrayList<Member>();
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -218,22 +219,16 @@ public class MemberDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int result = 0;
-//		String sql = "DELETE member2 WHERE id=? AND passwd=?";
+		
+		result = check(id,passwd);
+		if (result !=1) return result;
 		String sql = "DELETE member2 WHERE id=?";
 		
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			
-			if (check(id,passwd)==1) {
-				result = pstmt.executeUpdate();
-				result  = 1;
-				System.out.println(result);
-			} else if (check(id,passwd)==0) result = 0;
-			
-			else							result = -1;
-			
+			result = pstmt.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -241,6 +236,7 @@ public class MemberDao {
 			if (conn != null)	conn.close();
 		}
 		
+//		String sql = "DELETE member2 WHERE id=? AND passwd=?";
 //		try {
 //			conn = getConnection();
 //			pstmt = conn.prepareStatement(sql);

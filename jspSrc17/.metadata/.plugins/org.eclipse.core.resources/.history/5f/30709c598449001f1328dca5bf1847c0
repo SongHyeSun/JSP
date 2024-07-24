@@ -1,0 +1,24 @@
+package och16.service;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ListAction implements CommandProcess {
+
+	@Override
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//프로그램을 최소화
+		System.out.println("ListAction Service start....");
+		
+		request.setAttribute("totCnt", 5);
+		
+		//		View 명칭
+//		return "listForm.jsp";
+		return "list.jsp";
+	}
+
+}

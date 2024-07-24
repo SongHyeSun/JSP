@@ -160,6 +160,11 @@
 
 	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/MySql" password="mysql84" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
 	
+</Context><Context docBase="C:\jsp\jspSrc17\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\och16" path="/och16" reloadable="true" source="org.eclipse.jst.jee.server:och16">
+	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="50" maxIdle="10" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+
+	<Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="100" maxIdle="10" name="jdbc/MySql" password="mysql84" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/scottdb?serverTimezone=UTC" username="root"/>
+	
 </Context></Host>
     </Engine>
   </Service>

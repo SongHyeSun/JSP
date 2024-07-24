@@ -16,6 +16,7 @@
 </head>
 <body>
 	<h2>회원관리 메인 메뉴</h2>
+	<!-- 보통 여기에는 nav로 정의해준다! -->
 	<div class="btn-group">
 		<a href="logOut.jsp" 	  class="btn btn-primary active btn-sm" aria-current="page">로그아웃</a>
 		<a href="joinForm.jsp" 	  class="btn btn-primary btn-sm">회원가입</a>

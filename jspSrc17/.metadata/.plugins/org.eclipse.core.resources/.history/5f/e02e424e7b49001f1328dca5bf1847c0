@@ -1,0 +1,58 @@
+package och16.control;
+
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Servlet implementation class Controller
+ */
+public class Controller extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	//controller를 실행하면 무조건 Map이 따라다닌다.
+	private Map<String, Object> commandMap = new HashMap<String, Object>();
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Controller() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// client에서 보내온 객체를 그대로 선택한다 -> requdstServletPro를 걸어두어서
+		//get 방식이던, post 방식이던 무조건 실행하게 해 두었다.
+		requdstServletPro(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// client에서 보내온 객체를 그대로 선택한다 -> requdstServletPro를 걸어두어서
+			//get 방식이던, post 방식이던 무조건 실행하게 해 두었다.
+		requdstServletPro(request, response);
+	}
+	
+	protected void requdstServletPro(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+	}
+}
