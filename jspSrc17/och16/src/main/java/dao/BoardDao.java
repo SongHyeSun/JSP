@@ -1,7 +1,12 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -14,7 +19,7 @@ public class BoardDao {
 	private BoardDao() {
 	}
 	
-	private static BoardDao getInstance() {
+	public static BoardDao getInstance() {
 		if (instance == null) {
 			instance = new BoardDao();
 		}
@@ -33,5 +38,127 @@ public class BoardDao {
 			System.out.println(e.getMessage());
 		}
 		return conn;
+	}
+	
+	public int getTotalCnt() throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		int result = 0;
+		String sql = "SELECT COUNT(*) FROM board";
+		
+		
+		try {
+			conn = getConnection();
+			stmt  = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			if (rs.next()) {
+				result = rs.getInt(1);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (rs != null) rs.close();
+			if (stmt != null) stmt.close();
+			if (conn != null) conn.close();
+		}
+		return result;
+	}
+	
+	public List<Board> boardList(int startRow, int endRow) throws SQLException {
+		List<Board> boardList = new ArrayList<Board>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM ( SELECT ROWNUM rn, a.*"
+				+ "FROM ( SELECT * FROM board ORDER BY ref DESC, re_step) a )"
+				+ "WHERE rn BETWEEN ? AND ?";
+		System.out.println("boardList sql=>" + sql);
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
+			
+			while (rs.next()) {
+				Board board = new Board();
+				board.setNum(rs.getInt("num"));
+				board.setWriter(rs.getString("writer"));
+				board.setSubject(rs.getString("subject"));
+				board.setEmail(rs.getString("email"));
+				board.setReadcount(rs.getInt("readcount"));
+				board.setIp(rs.getString("ip"));
+				board.setRef(rs.getInt("ref"));
+				board.setRe_level(rs.getInt("re_level"));
+				board.setRe_step(rs.getInt("re_step"));
+				board.setReg_date(rs.getDate("reg_date"));
+				boardList.add(board);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (rs != null) rs.close();
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		return boardList;
+	}
+	
+	public Board select(int num) throws SQLException {
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT * FROM board WHERE num="+num;
+		Board board = new Board();
+		
+		try {
+			conn = getConnection();
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			if (rs.next()) {
+				board.setNum(rs.getInt("num"));
+				board.setWriter(rs.getString("writer"));
+				board.setSubject(rs.getString("subject"));
+				board.setEmail(rs.getString("email"));
+				board.setReadcount(rs.getInt("readcount"));
+				board.setIp(rs.getString("ip"));
+				board.setContent(rs.getString("content"));
+				board.setRef(rs.getInt("ref"));
+				board.setRe_level(rs.getInt("re_level"));
+				board.setRe_step(rs.getInt("re_step"));
+				board.setReg_date(rs.getDate("reg_date"));
+			}
+			
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if ( rs != null) rs.close();
+			if ( stmt != null) stmt.close();
+			if ( conn != null) conn.close();
+		}
+		return board;
+	}
+	
+	public void readCount(int num) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE board SET readcount=readcount+1 WHERE num=?";
+
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (pstmt !=null)	pstmt.close();
+			if (conn !=null)	conn.close();
+		}
 	}
 }

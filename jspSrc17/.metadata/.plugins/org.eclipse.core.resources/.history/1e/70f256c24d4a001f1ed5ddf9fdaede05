@@ -1,0 +1,26 @@
+package service;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class ContentAction implements CommandProcess {
+
+	@Override
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		System.out.println("ContentAction Service start....");
+		
+		// DAO Logic 이 이 자리에 들어갈 것!
+		
+		//DB 를 거쳐서 num 값으로 받아온 것!!
+		request.setAttribute("num", 30);
+		
+		// view
+		return "content.jsp";
+	}
+
+}

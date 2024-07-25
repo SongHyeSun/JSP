@@ -221,6 +221,7 @@ public class MemberDao {
 		int result = 0;
 		
 		result = check(id,passwd);
+		
 		if (result !=1) return result;
 		String sql = "DELETE member2 WHERE id=?";
 		

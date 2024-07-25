@@ -1,0 +1,31 @@
+package service;
+
+import java.io.IOException;
+
+import dao.BoardDao;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+//service --> dao인 단계
+public class ListAction implements CommandProcess {
+
+	@Override
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//프로그램을 최소화해서 보여주고 있는 로직
+		System.out.println("ListAction Service start....");
+		
+		// DAO Logic -> request SetAttribute에 관련된 parameter 값을 저장해놓을 것이다.
+		//singleton 선언
+		BoardDao bd = BoardDao.getInstance();
+		
+		
+		request.setAttribute("totCnt", 5);
+		
+		//		View 명칭
+//		return "listForm.jsp";
+		return "list.jsp";
+	}
+
+}
