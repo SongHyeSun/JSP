@@ -1,0 +1,28 @@
+package service;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+public class UpdateProAction implements CommandProcess {
+
+	@Override
+	public String requestPro(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// 1. num , pageNum, writer ,  email , subject , passwd , content   Get
+
+		// 2. Board board 생성하고 Value Setting
+
+
+		// 3. BoardDao bd Instance
+
+		// int result = bd.update(board);
+		// 4. request 객체에 result, num , pageNum 
+		
+	    // 5.updatePro.jsp Return
+		return null;
+	}
+
+}

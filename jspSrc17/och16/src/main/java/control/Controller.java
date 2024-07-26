@@ -87,7 +87,7 @@ public class Controller extends HttpServlet {
 			System.out.println("4. itit className=>"+className);
 			
 			try {
-//				ListAction la = new ListAction();  ==> 이렇게 사용하는 것이 가장 쉬운 방법!
+//				CommandProcess la = new ListAction();  ==> 이렇게 사용하는 것이 가장 쉬운 방법!
 //				소멸 Class
 //				Class commandClass = Class.forName(className);
 //				Object connandInstance = commandClass.newInstance();

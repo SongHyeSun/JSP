@@ -30,6 +30,7 @@ public class ListAction implements CommandProcess {
 			//처음에는 돌아가지 않는다. 다음부터 돌아간다. -> list.jsp에서 받아온!
 			String pageNum = request.getParameter("pageNum");
 			if(pageNum==null || pageNum.equals("")) { pageNum = "1"; }
+			//pasring은 계산할 때만 해준다. (모든 page가 아님)
 			int currentPage = Integer.parseInt(pageNum);		//1
 			int pageSize = 10, blockSize = 10;
 			int startRow = (currentPage - 1) * pageSize +1;		//1		11

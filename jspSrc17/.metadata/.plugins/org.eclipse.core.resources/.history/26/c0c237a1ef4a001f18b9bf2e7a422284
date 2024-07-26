@@ -1,0 +1,5 @@
+/list.do=service.ListAction
+/content.do=service.ContentAction
+/updateForm.do=service.UpdateFormAction
+/writeForm.do=service.WriteFormAction
+/deleteForm.do=service.DeleteFromAction

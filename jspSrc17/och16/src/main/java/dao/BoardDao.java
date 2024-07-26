@@ -71,6 +71,7 @@ public class BoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		
 		String sql = "SELECT * FROM ( SELECT ROWNUM rn, a.*"
 				+ "FROM ( SELECT * FROM board ORDER BY ref DESC, re_step) a )"
 				+ "WHERE rn BETWEEN ? AND ?";
@@ -161,4 +162,107 @@ public class BoardDao {
 			if (conn !=null)	conn.close();
 		}
 	}
+	
+	public int update(Board board) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		String sql = "UPDATE board SET subject=?, writer=?, email=?, passwd=?, content=? WHERE num=?";
+		int result = 0;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, board.getSubject());
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getEmail());
+			pstmt.setString(4, board.getPasswd());
+			pstmt.setString(5, board.getContent());
+			pstmt.setInt(6, board.getNum());
+			
+			result = pstmt.executeUpdate();
+			
+			if ( result > 0) result = 1;
+			else			result = 0;
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (pstmt != null) pstmt.close();
+			if (conn != null) conn.close();
+		}
+		return result;
+	}
+	
+	public int insert(Board board) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		int num = board.getNum();
+		ResultSet rs = null;
+		//신규 글
+		String sql1 = "SELECT nvl(MAX(num),0) FROM board";
+		//신규 글 + 댓글 공용
+		String sql3 = "INSERT INTO board VALUES(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
+		//홍해의 기적-> 댓글일 때
+		String sql2 = "UPDATE board SET re_step = re_step+1 WHERE ref=? AND re_step > ?";
+		 
+		try {
+			//sql1
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql1);
+			rs = pstmt.executeQuery();
+			rs.next();
+			//key인 num 1씩 증가, mysql auto_increment 또는 oracle sequence
+			//sequence를 사용 : values(시퀀스명(board_seq).nextval,?,?...)
+			int number = rs.getInt(1)+1;
+			rs.close();
+			pstmt.close();
+			
+			//sql2 -> 순수 댓글을 달기 위한 것
+			if (num != 0) {
+				System.out.println("BoardDAO insert 댓글 sql2->"+sql2);
+				System.out.println("BoardDAO insert 댓글 board.getRef()->"+board.getRef());
+				System.out.println("BoardDAO insert 댓글 board.getRe_step()->"+board.getRe_step());
+				
+				pstmt = conn.prepareStatement(sql2);
+				pstmt.setInt(1, board.getRef());
+				pstmt.setInt(2, board.getRe_step());
+				pstmt.executeUpdate();
+				pstmt.close();
+				
+				//댓글 관련 정보
+				board.setRe_step(board.getRe_step()+1);
+				board.setRe_level(board.getRe_level()+1);
+			}
+			
+			System.out.println("BoardDAO insert num->"+num);
+			System.out.println("BoardDAO insert number->"+number);
+			
+			//sql3
+			if (num == 0) board.setRef(number);
+			pstmt = conn.prepareStatement(sql3);
+			pstmt.setInt(1, number);
+			pstmt.setString(2, board.getWriter());
+			pstmt.setString(3, board.getSubject());
+			pstmt.setString(4, board.getContent());
+			pstmt.setString(5, board.getEmail());
+			pstmt.setInt(6, board.getReadcount());
+			pstmt.setString(7, board.getPasswd());
+			pstmt.setInt(8, board.getRef());
+			pstmt.setInt(9, board.getRe_step());
+			pstmt.setInt(10, board.getRe_level());
+			pstmt.setString(11, board.getIp());
+			
+			result = pstmt.executeUpdate();
+			
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			if (rs != null)		rs.close();
+			if (pstmt != null)	pstmt.close();
+			if (conn != null)	conn.close();
+		}
+		return result;
+	} 
 }
