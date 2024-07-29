@@ -201,6 +201,8 @@ public class BoardDao {
 		int num = board.getNum();
 		ResultSet rs = null;
 		//신규 글
+		//sql1을 없앨 수 있는 2가지 방법
+		//1. 모듈화 시켜준다.  2. sql문에 한번에 넣어준다.
 		String sql1 = "SELECT nvl(MAX(num),0) FROM board";
 		//신규 글 + 댓글 공용
 		String sql3 = "INSERT INTO board VALUES(?,?,?,?,?,?,?,?,?,?,?,sysdate)";
@@ -215,6 +217,8 @@ public class BoardDao {
 			rs.next();
 			//key인 num 1씩 증가, mysql auto_increment 또는 oracle sequence
 			//sequence를 사용 : values(시퀀스명(board_seq).nextval,?,?...)
+			
+			//단일 key일 경우는 sequence를 따주던지, max를 불러와준다.
 			int number = rs.getInt(1)+1;
 			rs.close();
 			pstmt.close();
@@ -265,4 +269,37 @@ public class BoardDao {
 		}
 		return result;
 	} 
+	
+	public int delete(int num, String passwd) throws SQLException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int result = 0;
+		ResultSet rs = null;
+		String sql1 = "SELECT passwd FROM board WHERE num=?";
+		String sql = "DELETE FROM board WHERE num=?";
+		
+		try {
+			String dbPasswd = "";
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql1);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				dbPasswd = rs.getString(1);
+				if(dbPasswd.equals(passwd)) {
+					rs.close();
+					pstmt.close();
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					result = pstmt.executeUpdate();
+				} else result=0;
+			} else result = -1;
+		} catch (Exception e) {
+			System.out.println("delete ->"+ e.getMessage());
+		} finally {
+			if ( pstmt != null) pstmt.close();
+			if ( conn != null) conn.close();
+		}
+		return result;
+	}
 }

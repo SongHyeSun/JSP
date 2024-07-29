@@ -21,7 +21,7 @@ public class UpdateFormAction implements CommandProcess {
 		try {
 			//2. BoardDao bd Instance
 			BoardDao bd = BoardDao.getInstance();
-			//3. Board board = bd.select(num)
+			//3. Board board = bd.select(num)-> numd으로 DTO를 넘겨준다.
 			Board board = bd.select(num);
 			//4. request 객체에 pageNum, board
 			request.setAttribute("pageNum", pageNum);

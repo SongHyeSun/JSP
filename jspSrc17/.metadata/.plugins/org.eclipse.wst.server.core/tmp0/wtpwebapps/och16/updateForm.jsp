@@ -14,6 +14,7 @@
 </head>
 <body>
 	<form action="updatePro.do" method="post">
+		<!-- num 은 보여주기만 하고 수정은 불가능하게 해놔야한다. -->
 		<input type="hidden" name="num" value="${board.num }">
 		<input type="hidden" name="pageNum" value="${pageNum }">
 		<table border="1">

@@ -27,6 +27,7 @@ public class ListAction implements CommandProcess {
 		try {
 			totCnt = bd.getTotalCnt(); //38
 			
+			// 페이징 작업!! -> 페이지만 작업해준다.
 			//처음에는 돌아가지 않는다. 다음부터 돌아간다. -> list.jsp에서 받아온!
 			String pageNum = request.getParameter("pageNum");
 			if(pageNum==null || pageNum.equals("")) { pageNum = "1"; }

@@ -12,6 +12,7 @@ import service.CommandProcess;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -150,9 +151,23 @@ public class Controller extends HttpServlet {
 			throw new ServletException(e);
 		}
 		
-		//2. 페이지를 이동시켜주겠다
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request, response);
+		//Ajax String을 포함하고 있으면
+		if (command.contains("ajaxGet")) {
+			//ajax가 여러개면 switch문으로 해줄 수 있다!!
+			System.out.println("ajaxGet String ->"+command);
+			String writer = (String) request.getAttribute("writer");
+			//나를 호출ㅎ는 화면에 띄어주면 된다.
+			PrintWriter pw = response.getWriter();
+			//writer 가 list.jsp의 function(writer)에 들어가진다.
+			pw.write(writer);
+			pw.flush();
+			
+			//일반적인 경우
+		} else {
+			//2. 페이지를 이동시켜주겠다
+			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+			dispatcher.forward(request, response);
+		}
 		
 	}
 }
