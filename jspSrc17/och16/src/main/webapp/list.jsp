@@ -15,12 +15,12 @@
 </style>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript">
-	function getDeptName(p_num) {
-		alert("getDeptName 1");
-		alert("getDeptName p_num "+p_num);
+	function getWriterName(p_num) {
+		alert("getWriterName 1");
+		alert("getWriterName p_num "+p_num);
 		
 		$.ajax({
-			url : "ajaxGetDeptName.do",
+			url : "ajaxGetWriterName.do",
 			/* 데이터가 또 있으면, {key: value, key: value ,...} */
 			data : {num : p_num},
 			dataType : 'text',
@@ -29,6 +29,7 @@
 							/* input Tag 에 value 속성을 갖고 있으면 val 로!!*/
 							$('#writerName').val(writer);
 							/* span Tag 에는 value 속성이 없기 때문에, html로@@ */
+							/* $는 jquery -> jquery와 ajax는 한 몸이다!! */
 							$('#msg').html(writer);
 							alert("writerName 2");
 						}
@@ -59,7 +60,7 @@
 					<td class="left" width=200>
 						<c:if test="${board.readcount> 20 }">
 								<!-- onmouseover는 ajax를 쓰기 위함! -->
-							<img src='images/hot.gif' onmouseover="getDeptName(${board.num})">
+							<img src='images/hot.gif' onmouseover="getWriterName(${board.num})">
 						</c:if>
 						<c:if test="${board.re_level > 0 }">
 							<img src='images/level.gif' width="${board.re_level*10 }">

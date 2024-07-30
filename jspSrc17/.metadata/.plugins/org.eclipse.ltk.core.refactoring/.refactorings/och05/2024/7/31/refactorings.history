@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 elements to &apos;webapp&apos;&#x0D;&#x0A;- Original project: &apos;och05&apos;&#x0D;&#x0A;- Destination element: &apos;webapp&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     cal4.jsp&#x0D;&#x0A;     gugu.html&#x0D;&#x0A;     error.jsp&#x0D;&#x0A;     cal5.jsp&#x0D;&#x0A;     error2.jsp" description="Copy files" element1="src/main/webapp/cal4.jsp" element2="src/main/webapp/gugu.html" element3="src/main/webapp/error.jsp" element4="src/main/webapp/cal5.jsp" element5="src/main/webapp/error2.jsp" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1722301689640" target="/ch02/src/main/webapp" units="0" version="1.0"/>
+</session>
